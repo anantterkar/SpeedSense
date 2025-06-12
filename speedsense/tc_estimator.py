@@ -45,7 +45,7 @@ class CodeModifier(ast.NodeTransformer):
                     op=ast.Add(),
                     value=ast.Constant(value=1)
                 ))
-                stmt.body = self.process_body(stmt.body)
+                stmt.body = self.process_body(stmt.body) # recursive call
                 self.nesting_level -= 1
                 self.counter_stack.pop()
                 new_body.append(stmt)
@@ -116,6 +116,7 @@ class CodeModifier(ast.NodeTransformer):
             else:
                 new_body.append(stmt)
         return new_body
+    
 tc_map = {
     0 : "O(1)",
     1 : "O(logn)",

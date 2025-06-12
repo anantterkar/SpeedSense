@@ -5,9 +5,10 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name='speedsense',
     packages=find_packages(include=['speedsense']),
-    version='0.1.0',
+    version='0.1.2',
     description='Time complexity analyser',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author='Anant Terkar',
     url="https://github.com/anantterkar/SpeedSense",
     author_email="20bcs014@iiitdwd.ac.in",
